@@ -485,7 +485,7 @@ pair<int, int> RuneDetector::chooseTarget(const Mat & image, const vector<Rotate
 		for (size_t j = 0; j < 3; j++){
 			size_t idx = i * 3 + j;
             Rect cell_roi = sudoku_rects[centers[idx].idx].boundingRect();
-            int margin_x = 0.25* cell_roi.width;
+            int margin_x = 0.25* cell_roi.width;d
             int margin_y = 0.25* cell_roi.height;
             Rect scale_roi = Rect(cell_roi.x + margin_x, cell_roi.y + margin_y, cell_roi.width - 2*margin_x, cell_roi.height - 2*margin_y);
             image(scale_roi).copyTo(cell[idx]);
