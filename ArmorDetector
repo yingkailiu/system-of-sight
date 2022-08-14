@@ -521,7 +521,7 @@ RotatedRect ArmorDetector::adjustRRect(const RotatedRect & rect){
 }
 
 void ArmorDetector::findTargetInContours(const vector<vector<Point> > & contours_left, const vector<vector<Point> > & contours_right, vector<RotatedRect> & rects, std::vector<double> & score) {
-	// ÓÃÖ±ÏßÄâºÏÂÖÀª£¬ÕÒ³ö·ûºÏĞ±ÂÊ·¶Î§µÄÂÖÀª
+	// ç”¨ç›´çº¿æ‹Ÿåˆè½®å»“ï¼Œæ‰¾å‡ºç¬¦åˆæ–œç‡èŒƒå›´çš„è½®å»“
 	vector<RotatedRect> final_contour_rect_left, final_contour_rect_right;
     vector<double> score_left, score_right;
 #ifdef SHOW_DEBUG_IMG
@@ -788,7 +788,7 @@ cv::RotatedRect ArmorDetector::chooseTarget(const std::vector<cv::RotatedRect> &
 
         int y_grad = 0, x_grad = 0;
         int large_grad_count = 0;
-        int side_width = gray_mid_black.cols * 10.0 / 100; // jump over the side£»
+        int side_width = gray_mid_black.cols * 10.0 / 100; // jump over the sideï¼›
         short * ptr_x = (short *)gradX.data;
         short * ptr_y = (short *)gradY.data;
         for (size_t j = 0; j < gradX.rows; ++j){
